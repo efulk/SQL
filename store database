@@ -1,0 +1,23 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, price INTEGER, category TEXT);
+
+INSERT INTO store VALUES (1, "blouse", 2, 20, "womens");
+INSERT INTO store VALUES (2, "skirt", 2, 25, "womens");
+INSERT INTO store VALUES (3, "dress", 2, 43, "womens");
+INSERT INTO store VALUES (4, "bra", 3, 44, "womens");
+INSERT INTO store VALUES (5, "panty", 3, 12, "womens");
+INSERT INTO store VALUES (6, "nightgown", 3, 33, "womens");
+INSERT INTO store VALUES (7, "button down", 4, 41, "mens");
+INSERT INTO store VALUES (8, "pants", 4, 55, "mens");
+INSERT INTO store VALUES (9, "tshirt", 4, 65, "mens");
+INSERT INTO store VALUES (10, "boxers", 5, 12, "mens");
+INSERT INTO store VALUES (11, "shoes", 6, 55, "mens");
+INSERT INTO store VALUES (12, "onsie", 7, 12, "baby");
+INSERT INTO store VALUES (13, "bib", 7, 15, "baby");
+INSERT INTO store VALUES (14, "sleep set", 7, 22, "baby");
+INSERT INTO store VALUES (15, "diapers", 7, 34, "baby");
+
+Select * FROM store;
+
+SELECT * FROM store ORDER BY price;
+
+SELECT SUM (price) from store;

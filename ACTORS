@@ -1,0 +1,40 @@
+CREATE TABLE actors (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER);
+
+INSERT into actors (fullname, age) VALUES ("Ryan Reynolds", 46);
+INSERT into actors (fullname, age) VAlUES ("Blake Lively", 35);
+INSERT into actors (fullname, age) VALUES ("Ashton Kutcher", 44);
+INSERT into actors (fullname, age) VALUES ("Mila Kunis", 39);
+INSERT into actors (fullname, age) VALUES ("Tom Hiddleston", 41);
+INSERT into actors (fullname, age) VALUES ("Kit Harrington", 35);
+INSERT into actors (fullname, age) VALUES ("Rose Leslie", 35);
+
+
+CREATE TABLE famous_for (id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, name TEXT);
+
+INSERT into famous_for (person_id, name) VALUES (1, "Deadpool");
+INSERT into famous_for (person_id, name) VALUES (2, "Gossip Girl");
+INSERT into famous_for (person_id, name) VALUES (3, "That 70s Show");
+INSERT into famous_for (person_id, name) VALUES (4, "That 70s Show");
+INSERT into famous_for (person_id, name) VALUES (5, "Avengers");
+INSERT into famous_for (person_id, name) VALUES (6, "Game of Thrones");
+INSERT into famous_for (person_id, name) VALUES (7, "Game of Thrones");
+
+
+CREATE TABLE spouses (id INTEGER PRIMARY KEY AUTOINCREMENT, person1_id INTEGER, person2_id INTEGER);
+
+INSERT into spouses (person1_id, person2_id) VALUES (1,2);
+INSERT into spouses (person1_id, person2_id) VALUES (3,4);
+INSERT into spouses (person1_id, person2_id) VALUES (6,7);
+
+SELECT a.fullname, f.name
+FROM actors AS a
+JOIN famous_for AS f
+ON a.id=f.person_id;
+
+SELECT a.fullname, b.fullname
+FROM spouses AS s
+JOIN actors a
+ON a.id=s.person1_id
+JOIN actors b
+ON b.id=s.person2_id
+
